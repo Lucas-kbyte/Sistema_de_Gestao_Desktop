@@ -1,1 +1,1 @@
-# Sistema_de_Gest-o_Desktop
+# Sistema_de_Gestao_Desktop

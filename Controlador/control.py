@@ -1,0 +1,1 @@
+from Modelo.model import conectar, criar_tabela, listar_produtos

@@ -26,7 +26,7 @@ def criar_tabela():
         if conexao:
             conexao.close()
 
-def criar_tabela_usuario():
+def criar_usuario():
     conexao = None
     try:
         conexao = conectar()
@@ -47,3 +47,13 @@ def criar_tabela_usuario():
     finally:
         if conexao:
             conexao.close()
+
+def listar_produtos():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("SELECT nome_produto, quantidade FROM banco, preco FROM banco")
+    produtos = cursor.fetchall()
+    
+    conexao.close()
+    return produtos

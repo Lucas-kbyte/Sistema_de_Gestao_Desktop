@@ -52,6 +52,3 @@ def listar_produtos():
     finally:
         if conexao:
             conexao.close()
-
-if __name__ == "__main__":
-    cria_tabela()

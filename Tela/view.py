@@ -1,11 +1,21 @@
 import customtkinter as ctk
 import tkinter as tk
 from PIL import Image, ImageTk
+import os
+import sys
 import cv2
 from Controlador.control import inserir_produto, inserir_usuario, atualizar_preco, buscar_produto, deletar_produto, verificar_login
 
-# terceiro teste disso
+# quarto teste disso
 # AAAAAAAAAAAAAAAAAAAAAA DEUS SOCORROOOO!!!!
+
+def resource_path(relative_path):
+    """ Obtém o caminho absoluto para o recurso, funciona para dev e para o PyInstaller """
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
@@ -27,9 +37,9 @@ def tela_principal():
 
         tema_atual = ctk.get_appearance_mode()
         if tema_atual == "Dark":
-            cap = cv2.VideoCapture("radar.webm")
+            cap = cv2.VideoCapture(resource_path("radar.webm"))
         else:
-            cap = cv2.VideoCapture("cigs.webm")
+            cap = cv2.VideoCapture(resource_path("cigs.webm"))
 
     def alternar_tema():
         if ctk.get_appearance_mode() == "Dark":

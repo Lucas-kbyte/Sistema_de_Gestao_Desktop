@@ -3,6 +3,8 @@ from tkinter import messagebox
 import tkinter as tk
 from tkinter import messagebox
 
+cria_tabela()
+
 def inserir_produto(nome, quantidade, preco, lbl_mensagem):
     n_dig = nome.get().strip()
     q_dig = quantidade.get().strip()
@@ -40,15 +42,9 @@ def inserir_produto(nome, quantidade, preco, lbl_mensagem):
         preco.delete(0, 'end')
         
     except ValueError:
-        lbl_mensagem.configure(text="Quantidade e preço válidos, por favor!", text_color="red")
-    except Exception as e:
-        lbl_mensagem.configure(text=f"Erro ao salvar: {e}", text_color="red")
-        
-    except ValueError:
         lbl_mensagem.configure(text="Quantidade e preço devem ser números válidos!", text_color="red")
     except Exception as e:
         lbl_mensagem.configure(text=f"Erro ao salvar: {e}", text_color="red")
-
 
 def buscar_produto():
     try:
